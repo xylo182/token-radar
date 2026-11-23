@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar: pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="mast">
+  <p class="kicker">TOKEN RADAR &middot; DEFI PROTOCOLS WITHOUT A TOKEN YET</p>
+  <h1>Which launch is worth farming?</h1>
+  <p class="lede" id="lede">Loading the sealed snapshot&hellip;</p>
+  <ul class="strip" id="strip" aria-label="Integrity checks"></ul>
+</header>
+<main>
+  <section class="panel" id="model" aria-label="The value model"></section>
+  <section class="panel controls" aria-label="Filter the board">
+    <label>Search <input id="q" type="search" placeholder="Protocol name or slug" autocomplete="off"></label>
+    <label>Category <select id="cat"><option value="">All categories</option></select></label>
+    <label>Chain <select id="chain"><option value="">All chains</option></select></label>
+    <label class="check"><input id="wl" type="checkbox"> Watchlist only</label>
+    <label>Min TVL <select id="minTvl">
+      <option value="0">Any</option><option value="50000000">$50M</option><option value="100000000">$100M</option><option value="500000000">$500M</option><option value="1000000000">$1B</option>
+    </select></label>
+    <p class="count" id="count"></p>
+  </section>
+  <section class="panel" aria-label="The board">
+    <h2>The board <span class="sub" id="boardSub"></span></h2>
+    <p class="hint">Click a column to sort. Click a row for the protocol&rsquo;s detail view and farm plan.</p>
+    <div class="tablewrap"><table id="board">
+      <thead><tr>
+        <th data-k="rank">#</th><th data-k="name">Protocol</th><th data-k="category">Category</th>
+        <th data-k="chains">Chains</th><th data-k="tvl_usd">TVL</th><th data-k="change_7d">7d</th>
+        <th data-k="age_days">Age</th><th data-k="issuance_odds">Token odds</th>
+        <th data-k="implied_value_usd">Implied value</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+  <section class="panel" id="detail" aria-label="Protocol detail">
+    <h2>Detail</h2>
+    <p class="hint">Select a row in the board to see one protocol&rsquo;s model breakdown and farm plan.</p>
+  </section>
+  <section class="panel" aria-label="Live tokens">
+    <h2>Already trading &mdash; not ranked</h2>
+    <p class="hint">These protocols already have a token, so the board shows the market&rsquo;s own value for them instead of a model&rsquo;s. They are not candidates for a launch.</p>
+    <div class="tablewrap"><table id="live">
+      <thead><tr><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>Market cap</th><th>7d</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+  <section class="panel" id="method" aria-label="Method"></section>
+</main>
+<footer><p id="foot"></p></footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

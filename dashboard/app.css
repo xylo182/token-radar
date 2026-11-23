@@ -1,0 +1,62 @@
+/* Token Radar dashboard: warm paper, navy ink, one amber accent. System fonts only. */
+:root{
+  --paper:#f6f4ee; --card:#fffdf8; --ink:#1a2433; --muted:#5b6675; --line:#ddd6c4;
+  --amber:#b45309; --amber-soft:#fef3c7; --teal:#0f766e; --red:#b91c1c; --navy:#1e3a5f;
+}
+*{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.45}
+.mast{max-width:1180px;margin:0 auto;padding:28px 20px 8px}
+.kicker{margin:0 0 6px;color:var(--amber);font-weight:700;letter-spacing:.14em;font-size:.78rem}
+h1{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:2.1rem;line-height:1.15;color:var(--navy)}
+.lede{margin:0 0 14px;color:var(--muted);max-width:76ch}
+.strip{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px;padding:0}
+.strip li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.82rem}
+.strip li b{color:var(--teal)}
+main{max-width:1180px;margin:0 auto;padding:0 20px 20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+h2{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:1.3rem;color:var(--navy)}
+h2 .sub{font-family:inherit;font-size:.9rem;color:var(--muted);font-weight:400}
+.hint{margin:0 0 12px;color:var(--muted);font-size:.88rem}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end}
+.controls label{font-size:.85rem;font-weight:600;color:var(--muted)}
+.controls input,.controls select{display:block;margin-top:4px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;font:inherit;font-size:.92rem;color:var(--ink)}
+.controls input[type=search]{width:220px}
+.controls .check{display:flex;gap:6px;align-items:center;padding-bottom:8px}
+.controls .check input{margin:0}
+.count{margin:0 0 0 auto;align-self:end;color:var(--muted);font-size:.88rem}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);cursor:pointer;user-select:none}
+th.sorted{color:var(--amber)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--amber-soft)}
+tbody tr.sel{background:#fde68a}
+td .tag{display:inline-block;background:#eef2f7;border-radius:6px;padding:1px 7px;font-size:.8rem}
+.pos{color:var(--teal)} .neg{color:var(--red)}
+.model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:10px}
+.model-grid h3{margin:0 0 4px;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.model-grid p{margin:0;font-size:.92rem}
+.formula{background:#12233a;color:#f3e9c8;border-radius:10px;padding:14px 16px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92rem;overflow-x:auto}
+.formula b{color:#fbbf24}
+table.mini{font-size:.85rem}
+table.mini th{cursor:default}
+.detail-head{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline}
+.detail-head h3{margin:0;font-family:Georgia,serif;font-size:1.35rem;color:var(--navy)}
+.detail-head .big{font-size:1.35rem;font-weight:800;color:var(--amber)}
+.factors{width:100%;max-width:640px}
+.factors td:first-child{color:var(--muted)}
+.steps{list-style:none;margin:12px 0 0;padding:0;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding:10px 12px 10px 44px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+.steps li::before{content:counter(step);position:absolute;left:10px;top:10px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;text-align:center;line-height:24px;font-size:.85rem;font-weight:700}
+.steps .meta{display:block;margin-top:4px;font-size:.85rem;color:var(--muted)}
+.steps .meta b{color:var(--ink)}
+.verdict{background:var(--amber-soft);border:1px solid #fcd34d;border-radius:10px;padding:12px 14px;margin-top:12px}
+.verdict b{color:var(--amber)}
+.warn{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:10px 14px;font-size:.88rem;color:#7f1d1d}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 28px;color:var(--muted);font-size:.85rem}
+@media (max-width:640px){h1{font-size:1.6rem}.controls input[type=search]{width:100%}}
